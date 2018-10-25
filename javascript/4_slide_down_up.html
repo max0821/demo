@@ -1,0 +1,68 @@
+<script src="js/jquery-1.12.4.min.js"></script>
+<style>
+body{
+	padding:0px;
+	margin:0px;
+}
+.menu{
+	position:fixed;
+	z-index:1000;
+	background-color:blue;
+	padding:5px;
+	width:100%;
+	
+}
+.menu .tab_content{
+	display:none;
+	background-color:pink;
+	width:300px;
+	position:absolute;
+	margin-top:5px;
+}
+
+.page_content{
+	padding-top:40px;
+	width:100%;
+	height:5000px;
+	position:absolute;
+	top:0px;
+	z-index:0;
+}
+</style>
+<div class="menu">
+	<button class="btn" b="1">BTN1</button>
+	<button class="btn" b="2">BTN2</button>
+	<button class="btn" b="3">BTN3</button>
+	<button class="btn" b="4">BTN4</button>
+	<div class="tab_content" id="tab_content_1">tab_content_1</div>
+	<div class="tab_content" id="tab_content_2">tab_content_2</div>
+	<div class="tab_content" id="tab_content_3">tab_content_3</div>
+	<div class="tab_content" id="tab_content_4">tab_content_4</div>
+</div>
+<div class="page_content">
+	On click , show , hide<br>
+	用javascript 控制 click 動作 / slideUp slideDown<br>
+	文件 <br>
+	http://api.jquery.com/slideup/ <br>
+	http://api.jquery.com/slideDown/ <br>
+</div>
+
+</select>
+<script>
+$().ready(function(){
+	$('.tab_content').hide();
+
+	$('.btn').on('click',function(){
+		var b = $(this).attr('b');//取得該元素中b等於多少
+		console.log('b='+b);//按F12可看到
+		$('.tab_content').slideUp();
+		$('#tab_content_'+b).slideDown('slow');
+		
+	});
+	
+	//點其它地方就隱藏 tab
+	$('.page_content').on('click',function(){
+		$('.tab_content').slideUp();
+	});
+});
+</script>

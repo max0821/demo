@@ -1,0 +1,52 @@
+<script src="js/jquery-1.12.4.min.js"></script>
+
+<div>
+	Selector 選擇器 <br>
+	取得需控制的HTML元素<br>
+	用javascript 控制 css <br>
+	文件 <br>
+	https://api.jquery.com/category/selectors/ <br>
+</div>
+
+<div id="test1">test1</div>
+<div class="test2">test2</div>
+
+<div class="test3">test3</div>
+<div class="test3">test3</div>
+<div class="test3">test3</div>
+
+<div id="test4">
+	<div class="test4a">aaaaa</div>
+	<div class="test4b">bbbbb</div>
+</div>
+
+<div xxx="test5">aaa</div>
+
+<input type=text name="test6" value="vvvvvvvv"><br>
+
+<select id="sel">
+	<option value="aa">ssss</option>
+	<option value="bb">cccc</option>
+</select>
+<script>
+$().ready(function(){
+	
+	$('#test1').css('color','red');
+	
+	$('.test2').css({
+	                 'color':'pink',
+	                 'font-size':'16px'
+				   });
+	
+	$('.test3').css('color','green');
+	$('.test3').eq(0).css('color','blue');//eq(0)第1個
+
+	$('#test4').find('.test4a').css('color','green');
+	
+	$('div[xxx="test5"]').css('color','#999999');
+	
+	$('input[name="test6"]').css('color','red');
+	
+	$('#sel option[value="bb"]').css('background-color','pink');;
+});
+</script>
