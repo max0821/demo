@@ -3,8 +3,8 @@
 <div>
 	Ajax<br>
 	用javascript 讀取遠端資料<br>
-	以讀取 5_json.json 內容為例<br>
-	ajax使用必需放在主機內
+	以讀取 5_json2.json 內容為例<br>
+	使用ajax時,json檔必需放在主機內
 	文件 <br>
 	https://api.jquery.com/category/selectors/ <br>
 </div>
@@ -14,11 +14,13 @@
 $().ready(function(){
 	
 	$.ajax({
-		url:'https://raw.githubusercontent.com/max0821/demo/master/javascript/5_json.json?1',
+		url:'https://raw.githubusercontent.com/max0821/demo/master/javascript/5_json2.json',
 		type: 'GET',
 		dataType: 'json',
 	}).done(function(data){
-		console.log(data);
+		$.each(data,function(k,v){
+			$('.news').append(v.title+'<br>'+v.comment+'<hr>');
+		})
 	}).fail(function(){
 		console.log('fail');
 	});
