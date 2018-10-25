@@ -14,11 +14,13 @@
 $().ready(function(){
 	
 	$.ajax({
-		url:'5_json.json',
+		url:'https://raw.githubusercontent.com/max0821/demo/master/javascript/5_json.json',
+		type: 'GET',
 		dataType: 'json',
-		success:function(data){
-			console.log(data);
-		}
+	}).done(function(data){
+		console.log(data);
+	}).fail(function(){
+		console.log('fail');
 	});
 });
 </script>
