@@ -1,0 +1,39 @@
+<style>
+@keyframes this_is_my_action_name
+{
+	from
+	{
+		margin-top: 20px;
+		color: black;
+	}
+	
+	to
+	{
+		margin-top: 80px;
+		border-radius:20px;
+		color: blue;
+	}
+}
+
+.young{
+	width:500px;
+	height:500px;
+	padding:20px;
+	border: 1px solid red;
+	
+	animation-name: this_is_my_action_name;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:0s;
+	animation-iteration-count:infinite;
+	animation-direction:alternate;
+}
+</style>
+<div class="young">
+	animation-name: 動畫名稱;<br>
+	animation-duration: 動畫作用時間;<br>
+	animation-timing-function: 動畫補間時運用的計算公式;<br>
+	animation-delay: 動畫需間隔多久後才開始;<br>
+	animation-iteration-count: 動畫作用次數;<br>
+	animation-direction: 動畫作用的方向;<br>
+</div>
